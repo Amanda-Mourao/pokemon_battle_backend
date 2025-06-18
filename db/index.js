@@ -1,9 +1,15 @@
-import chalk from 'chalk';
-import { mongoose } from 'mongoose';
+import chalk from "chalk";
+import { mongoose } from "mongoose";
 
 export default async function dbInit() {
   try {
-    const mongo = await mongoose.connect(process.env.MONGO_URI, { dbName: 'pokemon' });
+    // mongoose.connection.on("error", (err) => {
+    //   console.error("MongoDB connection error:", err);
+    // });
+
+    const mongo = await mongoose.connect(process.env.MONGO_URI, {
+      dbName: "pokemonBattle",
+    });
     console.log(chalk.cyan(` DB connected to ${mongo.connection.name}`));
   } catch (error) {
     console.log(error);

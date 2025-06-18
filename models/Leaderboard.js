@@ -1,28 +1,25 @@
 import { Schema, model } from "mongoose";
 
 const leaderboardList = new Schema({
-  id: {
-    type: Schema.Types.ObjectId,
-    ref: "id",
-    required: true,
-    unique: true,
-  },
+  // id: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "id",
+  //   required: true,
+  //   unique: true,
+  // },
   username: {
     type: String,
-    ref: "username",
     required: true,
   },
   score: {
     type: Number,
-    ref: "score",
     required: true,
   },
   date: {
     type: Date,
-    ref: "date",
-    default: "",
+    default: Date.now,
   },
 });
 
-const Leaderboard = model("leaderboard", leaderboardList);
-export default Leaderboard;
+export const leaderboard = model("leaderboard", leaderboardList);
+// export default leaderboard;
