@@ -1,12 +1,6 @@
 import { Schema, model } from "mongoose";
 
 const leaderboardList = new Schema({
-  // id: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "id",
-  //   required: true,
-  //   unique: true,
-  // },
   username: {
     type: String,
     required: true,
@@ -22,4 +16,3 @@ const leaderboardList = new Schema({
 });
 
 export const leaderboard = model("leaderboard", leaderboardList);
-// export default leaderboard;
